@@ -54,7 +54,7 @@ function App() {
   }, []);
 
   return (
-    // <Elements stripe={loadStripe(stripeApiKey)}>
+    
 
       <Router>
 
@@ -90,7 +90,7 @@ function App() {
         </Routes>
         <Footer />
       </Router>
-    {/* </Elements> */}
+   
   );
 }
 
