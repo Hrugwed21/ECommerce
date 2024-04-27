@@ -21,7 +21,7 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
 // Enable CORS to allow requests from your frontend (localhost:3000)
 app.use(cors({
     // origin: 'http://localhost:3000',
-    origin: 'https://ecommerce-woad-theta.vercel.app/',
+    origin: 'https://ecommerce-woad-theta.vercel.app',
 }));
 
 connectDatabase();
