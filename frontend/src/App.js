@@ -30,13 +30,13 @@ import OrderSuccess from "./component/Cart/OrderSuccess.js";
 function App() {
   const { isAuthenticated, user } = useSelector((state) => state.user);
 
-  const [stripeApiKey, setStripeApiKey] = useState("");
+  // const [stripeApiKey, setStripeApiKey] = useState("");
 
-  async function getStripeApiKey() {
-    const { data } = await axios.get("/api/v1/stripeapikey");
+  // async function getStripeApiKey() {
+  //   const { data } = await axios.get("/api/v1/stripeapikey");
 
-    setStripeApiKey(data.stripeApiKey);
-  }
+  //   setStripeApiKey(data.stripeApiKey);
+  // }
 
   React.useEffect(() => {
       WebFont.load({
