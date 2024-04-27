@@ -22,24 +22,24 @@ import Cart from "./component/Cart/Cart";
 import Shipping from "./component/Cart/Shipping.js";
 import ConfirmOrder from "./component/Cart/ConfirmOrder.js";
 import axios from "axios";
-import Payment from "./component/Cart/Payment.js";
-import { Elements } from "@stripe/react-stripe-js";
-import { loadStripe } from "@stripe/stripe-js";
-import OrderSuccess from "./component/Cart/OrderSuccess.js";
+// import Payment from "./component/Cart/Payment.js";
+// import { Elements } from "@stripe/react-stripe-js";
+// import { loadStripe } from "@stripe/stripe-js";
+// import OrderSuccess from "./component/Cart/OrderSuccess.js";
 
 function App() {
   const { isAuthenticated, user } = useSelector((state) => state.user);
 
-  const [stripeApiKey, setStripeApiKey] = useState("");
+  // const [stripeApiKey, setStripeApiKey] = useState("");
 
-  async function getStripeApiKey() {
-    try {
-      const { data } = await axios.get("/api/v1/stripeapikey");
-      setStripeApiKey(data.stripeApiKey);
-    } catch (error) {
-      console.log(error)
-    }
-  }
+  // async function getStripeApiKey() {
+  //   try {
+  //     const { data } = await axios.get("/api/v1/stripeapikey");
+  //     // setStripeApiKey(data.stripeApiKey);
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
 
   React.useEffect(() => {
     WebFont.load({
@@ -49,12 +49,12 @@ function App() {
     });
     store.dispatch(loadUser());
 
-    getStripeApiKey();
+    // getStripeApiKey();
 
   }, []);
 
   return (
-    <Elements stripe={loadStripe(stripeApiKey)}>
+    // <Elements stripe={loadStripe(stripeApiKey)}>
 
       <Router>
 
@@ -84,13 +84,13 @@ function App() {
           {isAuthenticated ? <Route exact path="/shipping" element={<Shipping />} /> : <Route exact path="/shipping" element={<LoginSignUp />} />}
           {isAuthenticated ? <Route exact path="/order/confirm" element={<ConfirmOrder />} /> : <Route exact path="/order/confirm" element={<LoginSignUp />} />}
 
-          {stripeApiKey &&
+          {/* {stripeApiKey &&
             (isAuthenticated ? <Route exact path="/process/payment" element={<Payment />} /> : <Route exact path="/process/payment" element={<LoginSignUp />} />)
-          }
+          } */}
         </Routes>
         <Footer />
       </Router>
-    </Elements>
+    {/* </Elements> */}
   );
 }
 
