@@ -69,7 +69,7 @@ const Header = React.memo(() => {
               <a href="/orders">Orders</a>
               <a href="/cart">Cart</a>
               <a href="#" onClick={logoutUser}>Logout</a>
-              {user.role === 'admin' &&
+              {user?.role === 'admin' &&
                <a href="/dashboard" onClick={logoutUser}>Dashboard</a>
               }
             </div>
