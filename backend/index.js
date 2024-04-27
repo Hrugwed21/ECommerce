@@ -19,10 +19,11 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
 
 //connecting to database
 // Enable CORS to allow requests from your frontend (localhost:3000)
-app.use(cors({
-    // origin: 'http://localhost:3000',
-    origin: '*',
-}));
+app.use(cors());
+// app.use(cors({
+//     // origin: 'http://localhost:3000',
+//     origin: '*',
+// }));
 
 connectDatabase();
 
